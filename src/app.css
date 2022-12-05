@@ -1,0 +1,9 @@
+.background {
+    @media (min-width: 1000px) {
+        background: blue;
+        background-size: 10%;
+        width: 300px;
+        height: 300px;
+    }
+  background-image: url("images/y2k2.png");
+}
