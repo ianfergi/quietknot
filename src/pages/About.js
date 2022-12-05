@@ -5,7 +5,7 @@ import Tabs from '../components/tabs';
 const About = () => {
     return (
         <>
-            <h1>Whats up gamers?</h1>
+            <h1>Whats up gamers?????</h1>
         </>
     );
 };

@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={''}>
       <Routes>
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/about' element={<About/>} />
