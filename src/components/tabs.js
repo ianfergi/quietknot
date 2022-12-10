@@ -211,7 +211,7 @@ const MOBILE_TABS = [
     {
         title: 'Cry',
         width: '40vh',
-        x: '40%',
+        x: '35%',
         y: '500%',
         id: 7,
         component: Cry,
@@ -245,15 +245,6 @@ const Tabs = () => {
 
     return (
         <Container>
-            {/* <ScreenContainer width={'40vh'} x={"18%"} y={"40%"} title={"Hello"} top={top} setTop={dragHandler} id={1}>{Intro()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"4%"} y={"0%"} title={"Bones - Full Album :)"} top={top} setTop={dragHandler} id={2}>{BonesFullAlbum()}</ScreenContainer>
-            <ImageCar width={'30vh'} x={"13%"} y={"120%"} title={"Album Art / Film Photos"} top={top} setTop={dragHandler} id={4}/>
-            <ScreenContainer x={"5%"} y={"150%"} title={"Instagram :3"} top={top} setTop={dragHandler} id={5}>{Instagram()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"20%"} y={"350%"} title={"Quietknot Spotify"} top={top} setTop={dragHandler} id={3}>{Spotify()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"15%"} y={"150%"} title={"TikTok"} top={top} setTop={dragHandler} id={6}>{TikTok()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"40%"} y={"500%"} title={"Cry"} top={top} setTop={dragHandler} id={7}>{Cry()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} height={'430px'} x={"5%"} y={"270%"} title={"Aches - Demos"} top={top} setTop={dragHandler} id={8}>{Aches()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"5%"} y={"5%"} title={"Mp3 Player"} top={top} setTop={dragHandler} id={9}>{Mp3()}</ScreenContainer> */}
             {MOBILE_TABS.map((tab) => {
                 return <ScreenContainer width={tab?.width} height={tab?.height} x={tab?.x} y={tab?.y} title={tab?.title} id={tab.id} top={top} setTop={dragHandler}>{tab.component()}</ScreenContainer>
             })}

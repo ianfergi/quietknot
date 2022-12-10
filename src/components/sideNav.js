@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { NavLink as SwagLink } from "react-router-dom";
 
 const Container = styled.div`
     background-image: url('/images/nva.jpg');
@@ -41,9 +42,19 @@ const NavContainer = styled.div`
     margin-left: 16px;
 `;
 
-const NavLink = styled.h2`
+const Nav = styled(SwagLink)`
     margin: unset;
     padding: unset;
+    display: block; 
+    font-size: 1.5em; 
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 2px black; /* width and color */
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
 `;
 
 const CloseButton = styled.button`
@@ -79,11 +90,11 @@ const SideNav = () => {
             {navOpen && (
                 <NavContainer>
                     <CloseButton onClick={onButtonClick}>&times;</CloseButton>
-                    <NavLink href='/home'>home</NavLink>
-                    <NavLink href='/music'>music</NavLink>
-                    <NavLink href='/links'>links</NavLink>
-                    <NavLink href='/merch'>merch</NavLink>
-                    <NavLink href='/about'>about</NavLink>
+                    <Nav to='/' end>home</Nav>
+                    <Nav to='/music'>music</Nav>
+                    <Nav to='/links'>links</Nav>
+                    <Nav to='/merch'>merch</Nav>
+                    <Nav to='/about'>about</Nav>
                 </NavContainer>
             )}
         </>

@@ -59,7 +59,7 @@ const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id}
       return (<></>);
     } else {
       return (
-          <Draggable positionOffset={{x, y}} style={{position: "absolute"}} cancel={'.button'} onStart={setTop(id)}>
+          <Draggable positionOffset={{x, y}} style={{position: "absolute", 'padding-bottom': "8px"}} cancel={'.button'} onStart={setTop(id)}>
             <BaseContainer width={width} height={height} isTop={(top == id)} onClick={setTop(id)}>
               <TopTab>
                 <TabText>{title}</TabText>
@@ -72,6 +72,16 @@ const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id}
           </Draggable>
       )
     }
+}
+
+ScreenContainer.defaultProps = {
+  x: "1%", 
+  y: "1%", 
+  children: null, 
+  title: "Title",
+  top: 0, 
+  setTop: () => {},
+  id: 0
 }
 
 export default ScreenContainer;
