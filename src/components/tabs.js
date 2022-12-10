@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ScreenContainer from "./screenContainer";
 import ImageCar from './ImageCar';
+import Mp3 from "./tabs/Mp3";
 
 const Iframe = styled.iframe`
     position: sticky;
@@ -15,11 +16,46 @@ const Container = styled.div`
 const IntroTxt = styled.p`
     padding: 8px;
     margin: unset;
+
+    h4 {
+        font-size: 18px;
+        font-weight: 500;
+        margin: 8px 0px 8px 0;
+        text-align: center;
+    }
+
+    p {
+        margin: 8px 0px 8px 0px;
+    }
+
+    @keyframes animatedBackground_a {
+        0% { background-position: 0 0 }
+        100% { background-position: -500px 0 }
+    }
+
+    .rainbow-text {
+        text-shadow: #A3A3A3 1px 1px 1px;
+        background-image: -webkit-linear-gradient(left, #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0, #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0, #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff, #00d5ff, #0af, #0080ff, #05f, #002aff, #00f, #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f, #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00);
+        -webkit-animation: animatedBackground_a 5s linear infinite alternate;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #0000;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .fire-text {
+        background-image: linear-gradient(0deg, #f00 25%, #ffb300 60%);
+        color: #0000;
+        -webkit-background-clip: text;
+        background-clip: text;
+        font-weight: bold;
+        display: inline-block;
+    }
 `;
 
 const BonesFullAlbum = () => {
     return (
-        <Iframe width="100%" src="https://www.youtube.com/embed/yTwzA82Nfm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Iframe>
+        <Iframe width="99%" src="https://www.youtube.com/embed/yTwzA82Nfm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Iframe>
     )
 }
 
@@ -36,12 +72,17 @@ const Cry = () => {
 }
 
 const Aches = () => {
+    // return (
+    //     <Iframe width="99%" src="https://bandcamp.com/EmbeddedPlayer/album=4019685760/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ianmferguson.bandcamp.com/album/aches-demos">Aches - Demos by Ian Ferguson</a></Iframe>
+    // )
+
     return (
-        <Iframe width="100%" height="100%" src="https://bandcamp.com/EmbeddedPlayer/album=4019685760/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ianmferguson.bandcamp.com/album/aches-demos">Aches - Demos by Ian Ferguson</a></Iframe>
-    )
+        <Iframe width="99%" height="120px" src="https://bandcamp.com/EmbeddedPlayer/album=4019685760/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ianmferguson.bandcamp.com/album/aches-demos">Aches - Demos by Ian Ferguson</a></Iframe>
+    );
 }
 
-const Instagram = (
+const Instagram = () => {
+    return (
         <div>
             <blockquote className="instagram-media" data-instgrm-permalink="https://www.instagram.com/quietknot_/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" styles=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                 <div styles="padding:16px;">
@@ -97,24 +138,102 @@ const Instagram = (
                 </div>
             </blockquote>
         </div>
-    );
+    )
+};
 
-const TikTok = (
-    <>
-        <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@quietknot_" data-unique-id="quietknot_" data-embed-type="creator" styles="max-width: 720px; min-width: 288px;" > <section> <a href="https://www.tiktok.com/@quietknot_?refer=creator_embed">@quietknot_</a> </section> </blockquote>
-    </>
-)
+const TikTok = () => {
+    return (
+        <>
+            <blockquote className="tiktok-embed" cite="https://www.tiktok.com/@quietknot_" data-unique-id="quietknot_" data-embed-type="creator" styles="max-width: 720px; min-width: 288px;" > <section> <a href="https://www.tiktok.com/@quietknot_?refer=creator_embed">@quietknot_</a> </section> </blockquote>
+        </>
+    )
+};
 
 const Intro = () => {
     return (
         <IntroTxt>
-            <p>Hello. welcome to <strong> quietknot.com</strong>!</p>
-            <p>Here you will find some cool and interesting stuff about quietknot and my music {`:)`} </p>
+            <h4>Welcome to <strong> quietknot.com</strong>!</h4>
+            <p>Here you will find some stuff about <span className='rainbow-text'>quietknot</span> and my music {`:)`} </p>
             <p>Feel free to take a look around and, as allways, let me know what you think! </p>
             <p>{'<3'} - Ian</p>
         </IntroTxt>
     )
 }
+
+const MOBILE_TABS = [
+    {
+        title: 'Hello',
+        width: '40vh',
+        x: '18%',
+        y: '40%',
+        id: 1,
+        component: Intro,
+    },
+    {
+        title: 'Bones - Full Album :)',
+        width: '40vh',
+        x: '4%',
+        y: '0%',
+        id: 2,
+        component: BonesFullAlbum,
+    },
+    // {
+    //     title: 'Album Art / Film Photos',
+    //     width: '30vh',
+    //     x: '13%',
+    //     y: '120%',
+    //     id: 4,
+    //     component: BonesFullAlbum,
+    // },
+    {
+        title: 'Instagram :3',
+        x: '5%',
+        y: '150%',
+        id: 5,
+        component: Instagram,
+    },
+    {
+        title: 'Quietknot Spotify',
+        width: '40vh',
+        x: '20%',
+        y: '350%',
+        id: 3,
+        component: Spotify,
+    },
+    {
+        title: 'Tiktok',
+        width: '40vh',
+        x: '20%',
+        y: '120%',
+        id: 6,
+        component: TikTok,
+    },
+    {
+        title: 'Cry',
+        width: '40vh',
+        x: '40%',
+        y: '500%',
+        id: 7,
+        component: Cry,
+    },
+    {
+        title: 'Aches - Demos',
+        width: '50vh',
+        // height: '600px',
+        x: '5%',
+        y: '270%',
+        id: 8,
+        component: Aches,
+    },
+    {
+        title: 'Mp3 Player',
+        width: '40vh',
+        x: '5%',
+        y: '150%',
+        id: 9,
+        component: Mp3,
+    },
+];
 
 const Tabs = () => {
     const [top, setTop] = useState(1);
@@ -126,14 +245,18 @@ const Tabs = () => {
 
     return (
         <Container>
-            <ScreenContainer width={'40vh'} x={"40%"} y={"30%"} title={"Hello"} top={top} setTop={dragHandler} id={1}>{Intro()}</ScreenContainer>
+            {/* <ScreenContainer width={'40vh'} x={"18%"} y={"40%"} title={"Hello"} top={top} setTop={dragHandler} id={1}>{Intro()}</ScreenContainer>
             <ScreenContainer width={'40vh'} x={"4%"} y={"0%"} title={"Bones - Full Album :)"} top={top} setTop={dragHandler} id={2}>{BonesFullAlbum()}</ScreenContainer>
             <ImageCar width={'30vh'} x={"13%"} y={"120%"} title={"Album Art / Film Photos"} top={top} setTop={dragHandler} id={4}/>
-            <ScreenContainer x={"5%"} y={"150%"} title={"Instagram :3"} top={top} setTop={dragHandler} id={5}>{Instagram}</ScreenContainer>
+            <ScreenContainer x={"5%"} y={"150%"} title={"Instagram :3"} top={top} setTop={dragHandler} id={5}>{Instagram()}</ScreenContainer>
             <ScreenContainer width={'40vh'} x={"20%"} y={"350%"} title={"Quietknot Spotify"} top={top} setTop={dragHandler} id={3}>{Spotify()}</ScreenContainer>
-            <ScreenContainer width={'40vh'} x={"15%"} y={"150%"} title={"TikTok"} top={top} setTop={dragHandler} id={6}>{TikTok}</ScreenContainer>
+            <ScreenContainer width={'40vh'} x={"15%"} y={"150%"} title={"TikTok"} top={top} setTop={dragHandler} id={6}>{TikTok()}</ScreenContainer>
             <ScreenContainer width={'40vh'} x={"40%"} y={"500%"} title={"Cry"} top={top} setTop={dragHandler} id={7}>{Cry()}</ScreenContainer>
             <ScreenContainer width={'40vh'} height={'430px'} x={"5%"} y={"270%"} title={"Aches - Demos"} top={top} setTop={dragHandler} id={8}>{Aches()}</ScreenContainer>
+            <ScreenContainer width={'40vh'} x={"5%"} y={"5%"} title={"Mp3 Player"} top={top} setTop={dragHandler} id={9}>{Mp3()}</ScreenContainer> */}
+            {MOBILE_TABS.map((tab) => {
+                return <ScreenContainer width={tab?.width} height={tab?.height} x={tab?.x} y={tab?.y} title={tab?.title} id={tab.id} top={top} setTop={dragHandler}>{tab.component()}</ScreenContainer>
+            })}
 
         </Container>
     )

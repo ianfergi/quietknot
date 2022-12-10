@@ -4,7 +4,7 @@ import Tabs from '../components/tabs';
 
 const Home = () => {
     return (
-        <>
+        <>  
             <SideNav />
             <Tabs />
         </>
