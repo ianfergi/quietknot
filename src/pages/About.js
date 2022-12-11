@@ -33,7 +33,7 @@ const About = () => {
     return (
         <Main>
             <SideNav/>
-            <Screen width={'90vw'} x={'5%'} y={'0'}>
+            <Screen title={'About'} width={'90vw'} x={'5%'} y={'0'}>
                 <AboutContainer>
                 Ahoy there. I am Ian. I upload music under the pseudonym quietknot.
                 All of my music is written and recorded by myself in my bedroom! 

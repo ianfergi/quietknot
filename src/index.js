@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Merch from "./pages/Merch";
 
 import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
 import Links from "./pages/Links";
@@ -14,9 +15,10 @@ const App = () => {
   return (
     <Router basename={''}>
       <Routes>
+        <Route path='/about' element={<About/>} />
+        <Route path='/links' element={<Links/>} />
+        <Route path='/merch' element={<Merch/>} />
         <Route exact path='/' element={<Home/>} />
-        <Route exact path='/about' element={<About/>} />
-        <Route exact path='/links' element={<Links/>} />
       </Routes>
     </Router>
   )
