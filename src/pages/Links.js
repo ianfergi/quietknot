@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import SideNav from "../components/sideNav";
+import { detectMob } from "../utils";
 
 const LINKS = [
     {
@@ -37,6 +38,10 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
+    gap: ${props => props?.isMobile ? `16px` : `32px`};
+    text-align: center;
+    width: ${props => props?.isMobile ? `100%` : `50%`};
+    margin: auto;
 `
 
 const LinkBox = styled.button`
@@ -107,53 +112,16 @@ const Icon = styled.img`
 `
 
 const Links = () => {
-    const active = true;
-    // const [initialX, setInitalX] = useState(false);
-    // const [startingX, setStartingX] = useState(0);
-    // const [diff, setDiff] = useState(0);
-    // const [shareOpen, setShareOpen] = useState(false);
-    // // let x = 10;
-    // var resizeTimeout;
-
-    // var obj = document.getElementById('movebutton');
-    // if (obj) {
-    //     obj.addEventListener('touchmove', function(event) {
-    //         if (resizeTimeout) {
-    //             clearTimeout(resizeTimeout);
-    //         }
-    //         setTimeout(function () {
-    //             if (event.targetTouches.length == 1) {
-    //                 var touch = event.targetTouches[0];
-    //                 if (!initialX) {
-    //                     setInitalX(true);
-    //                     setStartingX(touch.pageX);
-    //                 } else {
-    //                     const diff = startingX - touch.pageX
-    //                     if (diff > 40) {
-    //                         setShareOpen(true);
-    //                     } else {
-    //                         setDiff(diff);
-    //                     }
-    //                 }
-    //             }
-    //         }, 100)
-    //     }, false);
-    //     console.log("asdasdfasfaasdfsdf");
-
-    //     obj.addEventListener('touchend', function(event) {
-    //         setInitalX(false);
-    //     }, false);
-    // }
-
     const routeTo = (href) => () => {
         window.location.href = href;
     };
 
+    const isMobile = detectMob();
 
     return (
         <>  
             <SideNav/>
-            <Container>
+            <Container isMobile={isMobile} >
                 {LINKS.map((link) => {
                     return (
                         <LinkBox id='movebutton' href={link.href} onClick={routeTo(link.href)}>

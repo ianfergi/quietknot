@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Merch from "./pages/Merch";
 
-import { BrowserRouter as Router, Switch, Route, Link, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Links from "./pages/Links";
 
 if (process.env.NODE_ENV !== 'production') {

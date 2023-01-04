@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import ScreenContainer from "./screenContainer";
-import ImageCar from './ImageCar';
 import Mp3 from "./tabs/Mp3";
+import { detectMob } from "../utils";
 
 const Iframe = styled.iframe`
     position: sticky;
@@ -11,6 +11,10 @@ const Iframe = styled.iframe`
 
 const Container = styled.div`
     position: absolute;
+
+    .spotify {
+        background-color: #282828
+    }
 `;
 
 const IntroTxt = styled.p`
@@ -61,7 +65,7 @@ const BonesFullAlbum = () => {
 
 const Spotify = () => {
     return (
-        <Iframe src="https://open.spotify.com/embed/artist/53nv6nCxeXGPc6fAUyzmkp?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
+        <Iframe src="https://open.spotify.com/embed/artist/53nv6nCxeXGPc6fAUyzmkp?utm_source=generator&theme=0" width="98%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></Iframe>
     )
 }
 
@@ -72,10 +76,6 @@ const Cry = () => {
 }
 
 const Aches = () => {
-    // return (
-    //     <Iframe width="99%" src="https://bandcamp.com/EmbeddedPlayer/album=4019685760/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="https://ianmferguson.bandcamp.com/album/aches-demos">Aches - Demos by Ian Ferguson</a></Iframe>
-    // )
-
     return (
         <Iframe width="99%" height="120px" src="https://bandcamp.com/EmbeddedPlayer/album=4019685760/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ianmferguson.bandcamp.com/album/aches-demos">Aches - Demos by Ian Ferguson</a></Iframe>
     );
@@ -154,7 +154,7 @@ const Intro = () => {
         <IntroTxt>
             <h4>Welcome to <strong> quietknot.com</strong>!</h4>
             <p>Here you will find some stuff about <span className='rainbow-text'>quietknot</span> and my music {`:)`} </p>
-            <p>Feel free to take a look around and, as allways, let me know what you think! </p>
+            <p>Feel free to take a look around and, as always, let me know what you think! </p>
             <p>{'<3'} - Ian</p>
         </IntroTxt>
     )
@@ -163,16 +163,16 @@ const Intro = () => {
 const MOBILE_TABS = [
     {
         title: 'Hello',
-        width: '40vh',
-        x: '18%',
+        width: '90vw',
+        x: '4%',
         y: '40%',
         id: 1,
         component: Intro,
     },
     {
         title: 'Bones - Full Album :)',
-        width: '40vh',
-        x: '4%',
+        width: '70vw',
+        x: '2%',
         y: '0%',
         id: 2,
         component: BonesFullAlbum,
@@ -194,23 +194,24 @@ const MOBILE_TABS = [
     },
     {
         title: 'Quietknot Spotify',
-        width: '40vh',
-        x: '20%',
+        width: '90vw',
+        x: '10%',
         y: '350%',
         id: 3,
+        className: "spotify",
         component: Spotify,
     },
     {
         title: 'Tiktok',
-        width: '40vh',
+        width: '70vw',
         x: '20%',
-        y: '120%',
+        y: '180%',
         id: 6,
         component: TikTok,
     },
     {
         title: 'Cry',
-        width: '40vh',
+        width: '60vw',
         x: '35%',
         y: '500%',
         id: 7,
@@ -218,18 +219,94 @@ const MOBILE_TABS = [
     },
     {
         title: 'Aches - Demos',
-        width: '50vh',
+        width: '90vw',
         // height: '600px',
         x: '5%',
-        y: '270%',
+        y: '700%',
         id: 8,
         component: Aches,
     },
     {
         title: 'Mp3 Player',
-        width: '40vh',
+        width: '80vw',
         x: '5%',
         y: '150%',
+        id: 9,
+        component: Mp3,
+    },
+];
+
+const DESKTOP_TABS = [
+    {
+        title: 'Hello',
+        width: '40vw',
+        x: '70%',
+        y: '40%',
+        id: 1,
+        component: Intro,
+    },
+    {
+        title: 'Bones - Full Album :)',
+        width: '30vw',
+        x: '2%',
+        y: '0%',
+        id: 2,
+        component: BonesFullAlbum,
+    },
+    // {
+    //     title: 'Album Art / Film Photos',
+    //     width: '30vh',
+    //     x: '13%',
+    //     y: '120%',
+    //     id: 4,
+    //     component: BonesFullAlbum,
+    // },
+    {
+        title: 'Instagram :3',
+        x: '150%',
+        y: '100%',
+        id: 6,
+        component: Instagram,
+    },
+    {
+        title: 'Quietknot Spotify',
+        width: '30vw',
+        x: '20%',
+        y: '250%',
+        id: 3,
+        className: "spotify",
+        component: Spotify,
+    },
+    {
+        title: 'Tiktok',
+        width: '40vw',
+        x: '140%',
+        y: '50%',
+        id: 5,
+        component: TikTok,
+    },
+    {
+        title: 'Cry',
+        width: '20vw',
+        x: '35%',
+        y: '240%',
+        id: 7,
+        component: Cry,
+    },
+    {
+        title: 'Aches - Demos',
+        width: '30vw',
+        // height: '600px',
+        x: '70%',
+        y: '420%',
+        id: 8,
+        component: Aches,
+    },
+    {
+        title: 'Mp3 Player',
+        width: '40vw',
+        x: '130%',
+        y: '-20%',
         id: 9,
         component: Mp3,
     },
@@ -243,10 +320,13 @@ const Tabs = () => {
         setTop(id);
     }
 
+    const isMobile = detectMob();
+    const tabs = isMobile ? MOBILE_TABS : DESKTOP_TABS;
+
     return (
         <Container>
-            {MOBILE_TABS.map((tab) => {
-                return <ScreenContainer width={tab?.width} height={tab?.height} x={tab?.x} y={tab?.y} title={tab?.title} id={tab.id} top={top} setTop={dragHandler}>{tab.component()}</ScreenContainer>
+            {tabs.map((tab) => {
+                return <ScreenContainer width={tab?.width} height={tab?.height} x={tab?.x} y={tab?.y} title={tab?.title} id={tab.id} top={top} setTop={dragHandler} className={tab?.className}>{tab.component()}</ScreenContainer>
             })}
 
         </Container>

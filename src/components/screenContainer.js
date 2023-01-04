@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Draggable from 'react-draggable'
-import { detectMob } from '../utils';
 
 const BaseContainer = styled.div`
   border: 2px solid black;
@@ -42,25 +41,17 @@ const TabText = styled.p`
   font-family: 'Syne Mono', monospace;
 `;
 
-const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id}) => {
+const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id, className }) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const toggleOpen = () => setIsOpen(!isOpen);
-    const isMobile = detectMob();
-    const desktopMult = {x: 4, y: 1};
-    const newX= parseFloat(x), newY = parseFloat(y);
-    const xCord = isMobile ? newX : (newX * desktopMult.x);
-    const yCord = isMobile ? y : (newY * desktopMult.y);
-    const xCordPercent = xCord;
-    const yCordPercent = yCord;
-    console.log(x, y, xCordPercent, yCordPercent);
 
     if (!isOpen) {
       return (<></>);
     } else {
       return (
           <Draggable positionOffset={{x, y}} style={{position: "absolute", 'padding-bottom': "8px"}} cancel={'.button'} onStart={setTop(id)}>
-            <BaseContainer width={width} height={height} isTop={(top == id)} onClick={setTop(id)}>
+            <BaseContainer className={className} width={width} height={height} isTop={(top === id)} onClick={setTop(id)}>
               <TopTab>
                 <TabText>{title}</TabText>
                 <CloseButton className="button" onClick={toggleOpen}>&times;</CloseButton>
@@ -81,7 +72,8 @@ ScreenContainer.defaultProps = {
   title: "Title",
   top: 0, 
   setTop: () => {},
-  id: 0
+  id: 0,
+  className: "",
 }
 
 export default ScreenContainer;
