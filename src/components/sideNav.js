@@ -95,6 +95,7 @@ const SideNav = () => {
                     <Nav to='/links'>links</Nav>
                     <Nav to='/merch'>merch</Nav>
                     <Nav to='/about'>about</Nav>
+                    <Nav to='/unreleased'>unreleased</Nav>
                 </NavContainer>
             )}
         </>
