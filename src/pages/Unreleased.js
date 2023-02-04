@@ -45,6 +45,8 @@ const Unreleased = () => {
     const isMobile = detectMob();
     const width = isMobile ? '90vw' : '50vw';
     const location = isMobile ? '5%' : '45%';
+    // const prepend = "https://github.com/ianfergi/quietknot/blob/main/public/audio/1-13-22_1.mp3?raw=true";
+    const prepend = "https://github.com/ianfergi/quietknot/blob/main/public";
 
     return (
         <Page>
@@ -60,21 +62,21 @@ const Unreleased = () => {
                 </Screen>
                 <Screen title={'Music'} width={width} x={location} y={'30vh'}>
                     <Mp3Container>
-                        <Mp3Player title={"De Maci"} audioSrc={"/audio/de_maci.mp3"} />
-                        <Mp3Player title={"Right"} audioSrc={"/audio/right.mp3"} />
-                        <Mp3Player title={"Synth Song 2"} audioSrc={"/audio/synth_song_2.mp3"} />
-                        <Mp3Player title={"Thud"} audioSrc={"/audio/thud.mp3"} />
-                        <Mp3Player title={"Try"} audioSrc={"/audio/try_1.mp3"} />
-                        <Mp3Player title={"Egg"} audioSrc={"/audio/egg.mp3"} />
-                        <Mp3Player title={"Slide"} audioSrc={"/audio/slide.mp3"} />
-                        <Mp3Player title={"Stray Thought"} audioSrc={"/audio/stray_thought.mp3"} />
-                        <Mp3Player title={"1-13-22_1"} audioSrc={"/audio/1-13-22_1.mp3"} />
-                        <Mp3Player title={"1-17-22"} audioSrc={"/audio/1-17-22.mp3"} />
-                        <Mp3Player title={"1-23-2021"} audioSrc={"/audio/1-23-2021.mp3"} />
-                        <Mp3Player title={"5-6-22-2"} audioSrc={"/audio/5-6-22-2.mp3"} />
-                        <Mp3Player title={"Basso Not"} audioSrc={"/audio/basso_not_1.mp3"} />
-                        <Mp3Player title={"Into Earth"} audioSrc={"/audio/into-earth-2.mp3"} />
-                        <Mp3Player title={"Your World"} audioSrc={"/audio/yourworld.mp3"} />
+                        <Mp3Player title={"De Maci"} audioSrc={prepend + "/audio/de_maci.mp3"} />
+                        <Mp3Player title={"Right"} audioSrc={prepend + "/audio/right.mp3"} />
+                        <Mp3Player title={"Synth Song 2"} audioSrc={prepend + "/audio/synth_song_2.mp3"} />
+                        <Mp3Player title={"Thud"} audioSrc={prepend + "/audio/thud.mp3"} />
+                        <Mp3Player title={"Try"} audioSrc={prepend + "/audio/try_1.mp3"} />
+                        <Mp3Player title={"Egg"} audioSrc={prepend + "/audio/egg.mp3"} />
+                        <Mp3Player title={"Slide"} audioSrc={prepend + "/audio/slide.mp3"} />
+                        <Mp3Player title={"Stray Thought"} audioSrc={prepend + "/audio/stray_thought.mp3"} />
+                        <Mp3Player title={"1-13-22_1"} audioSrc={prepend + "/audio/1-13-22_1.mp3"} />
+                        <Mp3Player title={"1-17-22"} audioSrc={prepend + "/audio/1-17-22.mp3"} />
+                        <Mp3Player title={"1-23-2021"} audioSrc={prepend + "/audio/1-23-2021.mp3"} />
+                        <Mp3Player title={"5-6-22-2"} audioSrc={prepend + "/audio/5-6-22-2.mp3"} />
+                        <Mp3Player title={"Basso Not"} audioSrc={prepend + "/audio/basso_not_1.mp3"} />
+                        <Mp3Player title={"Into Earth"} audioSrc={prepend + "/audio/into-earth-2.mp3"} />
+                        <Mp3Player title={"Your World"} audioSrc={prepend + "/audio/yourworld.mp3"} />
                     </Mp3Container>
                 </Screen>
             </Main>
