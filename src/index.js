@@ -7,6 +7,7 @@ import Unreleased from "./pages/Unreleased";
 
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Links from "./pages/Links";
+import Music from "./pages/Music";
 
 if (process.env.NODE_ENV !== 'production') {
   console.log('Looks like we are in development mode!');
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path='/about' element={<About/>} />
         <Route path='/links' element={<Links/>} />
+        <Route path='/music' element={<Music/>} />
         <Route path='/merch' element={<Merch/>} />
         <Route path='/unreleased' element={<Unreleased/>} />
         <Route exact path='/' element={<Home/>} />

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SideNav from "../components/sideNav";
-import { detectMob } from "../utils";
+import { detectMob, routeTo } from "../utils";
 
 const LINKS = [
     {
@@ -112,10 +112,6 @@ const Icon = styled.img`
 `
 
 const Links = () => {
-    const routeTo = (href) => () => {
-        window.location.href = href;
-    };
-
     const isMobile = detectMob();
 
     return (

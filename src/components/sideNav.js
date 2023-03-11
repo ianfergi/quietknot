@@ -40,6 +40,7 @@ const NavContainer = styled.div`
     z-index: 1000;
     position: absolute;
     margin-left: 16px;
+    max-width: 400px;
 `;
 
 const Nav = styled(SwagLink)`
