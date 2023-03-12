@@ -57,6 +57,10 @@ const IntroTxt = styled.p`
     }
 `;
 
+const StyledImg = styled.img`
+    max-width: 200px;
+`;
+
 const BonesFullAlbum = () => {
     return (
         <Iframe width="99%" src="https://www.youtube.com/embed/yTwzA82Nfm0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></Iframe>
@@ -160,6 +164,20 @@ const Intro = () => {
     )
 }
 
+const NewAlbum = () => {
+    return (
+        <IntroTxt>
+            <h4><strong>New Album "Go Fish"</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>Go Fish</span> comes out March 16th! </p>
+            <StyledImg src="/images/go_fish.png"></StyledImg>
+            <p>I'm super excited to share what I've been working on recently. Please take listen and let me know what you
+                think!
+            </p>
+            <p><a href="https://distrokid.com/hyperfollow/quietknot2/go-fish-2">Presave here</a></p>
+        </IntroTxt>
+    )
+}
+
 const MOBILE_TABS = [
     {
         title: 'Hello',
@@ -168,6 +186,14 @@ const MOBILE_TABS = [
         y: '40%',
         id: 1,
         component: Intro,
+    },
+    {
+        title: 'NEW ALBUM MARCH 16TH',
+        width: '90vw',
+        x: '4%',
+        y: '10%',
+        id: 1,
+        component: NewAlbum,
     },
     {
         title: 'Bones - Full Album :)',
@@ -244,6 +270,14 @@ const DESKTOP_TABS = [
         y: '40%',
         id: 1,
         component: Intro,
+    },
+    {
+        title: 'NEW ALBUM MARCH 16TH',
+        width: '40vw',
+        x: '70%',
+        y: '15%',
+        id: 1,
+        component: NewAlbum,
     },
     {
         title: 'Bones - Full Album :)',
