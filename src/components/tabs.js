@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ScreenContainer from "./screenContainer";
 import Mp3 from "./tabs/Mp3";
 import { detectMob } from "../utils";
+import OldButton from "./reusable/OldButton";
 
 const Iframe = styled.iframe`
     position: sticky;
@@ -59,6 +60,14 @@ const IntroTxt = styled.p`
 
 const StyledImg = styled.img`
     max-width: 200px;
+`;
+
+const ButtonContainer = styled.div`
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
 `;
 
 const BonesFullAlbum = () => {
@@ -178,6 +187,30 @@ const NewAlbum = () => {
     )
 }
 
+const GO_FISH_ALBUM_LINK = "https://open.spotify.com/album/0DmkVesRp0WCBFe2Pe3UJD";
+const GO_FISH_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/go-fish";
+const SPOTIFY_IMAGE_LINK = '/images/spotify_icon.png';
+const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
+const YOUTUBE_IMG_LINK = '/images/youtube_icon.png';
+const GO_FISH_YT_LINK = 'https://www.youtube.com/watch?v=3bfSoCL0tyA';
+
+const NewAlbumOut = () => {
+    return (
+        <IntroTxt>
+            <h4><strong>New Album "Go Fish"</strong><p><span className='rainbow-text'>OUT NOW</span></p></h4>
+            <StyledImg src="/images/go_fish.png"></StyledImg>
+            <p>I'm super excited to share what I've been working on recently. Please take a listen and let me know what you
+                think!
+            </p>
+            <ButtonContainer>
+                <OldButton uri={GO_FISH_ALBUM_LINK} text={"Spotify"} imageSrc={SPOTIFY_IMAGE_LINK} />
+                <OldButton uri={GO_FISH_BANDCAMP_LINK} text={"Bandcamp"} imageSrc={BANDCAMP_IMG_LINK} />
+                <OldButton uri={GO_FISH_YT_LINK} text={"Youtube"} imageSrc={YOUTUBE_IMG_LINK} />
+            </ButtonContainer>
+        </IntroTxt>
+    )
+}
+
 const MOBILE_TABS = [
     {
         title: 'Hello',
@@ -188,12 +221,12 @@ const MOBILE_TABS = [
         component: Intro,
     },
     {
-        title: 'NEW ALBUM MARCH 16TH',
+        title: 'NEW ALBUM OUT',
         width: '90vw',
         x: '4%',
         y: '10%',
         id: 1,
-        component: NewAlbum,
+        component: NewAlbumOut,
     },
     {
         title: 'Bones - Full Album :)',
@@ -277,7 +310,7 @@ const DESKTOP_TABS = [
         x: '70%',
         y: '15%',
         id: 1,
-        component: NewAlbum,
+        component: NewAlbumOut,
     },
     {
         title: 'Bones - Full Album :)',
