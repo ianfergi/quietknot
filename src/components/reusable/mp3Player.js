@@ -53,7 +53,7 @@ const Download = styled.a`
 
 `;
 
-const Mp3Player = ({audioSrc, title = "Song", picture}) => {
+const Mp3Player = ({audioSrc, title = "Song", picture, className}) => {
     const [playing, setPlaying] = useState(false);
 
     const audio = useMemo(() => {
@@ -71,7 +71,7 @@ const Mp3Player = ({audioSrc, title = "Song", picture}) => {
     }
   
     return (
-      <Mp3Box2 >
+      <Mp3Box2 className={className}>
         <Button className={playing ? "paused" : ""} onClick={togglePlaying}></Button>
         <text>{title}</text>
         <Download href={audioSrc}>Download </Download>

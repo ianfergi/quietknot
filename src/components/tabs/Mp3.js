@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Mp3Player from "../reusable/mp3Player";
 
 const IntroTxt = styled.p`
 padding: 8px;
@@ -32,16 +33,20 @@ margin: unset;
 
 const Mp3Box = styled.div`
 padding: 8px;
+
+.fullWidth {
+    width: 100%;
+}
 `;
 
 const Mp3Box2 = styled.div`
-display: flex;
-flex-direction: row;
-background-color: grey;
-padding: 4px;
-align-items: center;
-gap: 4px;
-border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: light-grey;
+    padding: 4px;
+    align-items: center;
+    gap: 4px;
+    border: 2px solid black;
 `;
 
 const CatSpin = styled.img`
@@ -52,16 +57,18 @@ border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 
 border-image-slice: 1;
 `;
 
+
+const prepend = "https://github.com/ianfergi/quietknot/blob/main/public";
+const append = "?raw=true";
+
 const Mp3 = () => {
     return (
         <Mp3Box>
 
-            <IntroTxt>Now Playing: Quietknot: <span className='fire-text'>Burning</span></IntroTxt>
+            <IntroTxt>Now Playing: Quietknot: <span className='rainbow-text'>Away</span></IntroTxt>
             <Mp3Box2>
                 <CatSpin src='/images/cat-dance.gif' />
-                <audio controls>
-                    <source src="/audio/burning.mp3" type="audio/mp3" />
-                </audio>
+                <Mp3Player className={"fullWidth"} title={"Away"} audioSrc={prepend + "/audio/Away.mp3" + append} />
             </Mp3Box2>
         </Mp3Box>
     )
