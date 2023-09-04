@@ -40,7 +40,7 @@ const Container = styled.div`
     gap: 16px;
     gap: ${props => props?.isMobile ? `16px` : `32px`};
     text-align: center;
-    width: ${props => props?.isMobile ? `100%` : `50%`};
+    width: ${props => props?.isMobile ? `` : `50%`};
     margin: auto;
 `
 
