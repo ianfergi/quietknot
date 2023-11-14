@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SideNav from "../components/sideNav";
 import ScreenContainer from "../components/screenContainer";
+import { routeTo } from "../utils";
 
 const AboutContainer = styled.div`
     padding: 8px;
@@ -35,6 +36,77 @@ const Container = styled.div`
     flex-direction: column;
 `;
 
+const LinkBox = styled.button`
+    padding: unset;
+    border-radius: unset;
+    border: unset;
+    border-bottom: 4px #686767 solid;
+    border-right: 4px #686767 solid;
+    border-left: 4px white solid;
+    border-top: 4px white solid;
+
+    outline-offset: 0px;
+    outline: 1px solid black;
+
+    :active { 
+        border-top: 4px #686767 solid;
+        border-left: 4px #686767 solid;
+        border-right: 4px white solid;
+        border-bottom: 4px white solid;
+    }
+
+
+    position: relative;
+    // left: -${props => props?.x}px;
+    // right: ${props => props?.x}px;
+    filter: drop-shadow(2px 2px 2px aquamarine);
+    margin: 0px 16px 0px 16px;
+`;
+
+const BorderBox = styled.div`
+    border-left: 4px solid #e6e6e6;
+    border-top: 4px solid #e6e6e6;
+    border-right: 4px solid grey;
+    border-bottom: 4px solid grey;
+    background-color: #cfcfcf;
+
+    :active {
+        border-right: 4px solid #e6e6e6;
+        border-bottom: 4px solid #e6e6e6;
+        border-left: 4px solid grey;
+        border-top: 4px solid grey;
+        background-color: aquamarine;
+    }
+
+    :hover {
+        outline-offset: -8px;
+        outline: 1px dashed black;
+    }
+
+    height: 26px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    font-family: 'Syne Mono', monospace;
+    text-shadow: 2px 2px grey;
+    font-size: 24px;
+`
+
+const Icon = styled.img`
+    position: absolute;
+    left: 16px;
+    height: 24px;
+    width: 24px;
+    -webkit-filter: drop-shadow(2px 2px #666666);
+    filter: drop-shadow(2px 2px #666666);
+`
+
+const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
+const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
+
 const Merch = () => {
     return (
         <>
@@ -42,8 +114,14 @@ const Merch = () => {
             <Screen title={"Merch"} width={'90vw'} x={'5%'} y={'0'}>
                 <Container>
                 <AboutContainer>
-                No merch yet, will probably try to sell a couple CDs or tapes of my next release, <span className="rainbow-text">stay tuned :)</span>
+                Word Science CDs <span className="rainbow-text">AVAILABLE NOW</span>
                 </AboutContainer>
+                <LinkBox id='movebutton' href={WORD_SCIENCE_BANDCAMP_LINK} onClick={routeTo(WORD_SCIENCE_BANDCAMP_LINK)}>
+                    <BorderBox>
+                        <Icon src={BANDCAMP_IMG_LINK}/>
+                        {"BUY CD HERE"}
+                    </BorderBox>
+                </LinkBox>
                 <Image src="/images/cd2.gif"></Image>
 
                 </Container>

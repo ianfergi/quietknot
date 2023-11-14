@@ -176,13 +176,14 @@ const Intro = () => {
 const NewAlbum = () => {
     return (
         <IntroTxt>
-            <h4><strong>New Album "Go Fish"</strong></h4>
-            <p>My awesome new album <span className='rainbow-text'>Go Fish</span> comes out March 16th! </p>
-            <StyledImg src="/images/go_fish.png"></StyledImg>
-            <p>I'm super excited to share what I've been working on recently. Please take listen and let me know what you
-                think!
+            <h4><strong>New Album "Word Science"</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>Word Science</span> comes out Dec 1st! </p>
+            <StyledImg src="/images/word_science.png"></StyledImg>
+            <p>I'm super excited to share what I've been working on recently. Please use the link below to presave on Spotify!
             </p>
-            <p><a href="https://distrokid.com/hyperfollow/quietknot2/go-fish-2">Presave here</a></p>
+            <p><a href="https://distrokid.com/hyperfollow/quietknot2/word-science">Presave here</a></p>
+            <p>You can also buy a CD here through bandcamp!</p>
+            <p><a href="https://ianmferguson.bandcamp.com/album/word-science">Awesome CD</a></p>
         </IntroTxt>
     )
 }
@@ -221,12 +222,12 @@ const MOBILE_TABS = [
         component: Intro,
     },
     {
-        title: 'NEW ALBUM OUT',
+        title: 'NEW ALBUM DEC 1st',
         width: '90vw',
         x: '4%',
         y: '10%',
         id: 1,
-        component: NewAlbumOut,
+        component: NewAlbum,
     },
     {
         title: 'Bones - Full Album :)',
@@ -305,12 +306,12 @@ const DESKTOP_TABS = [
         component: Intro,
     },
     {
-        title: 'NEW ALBUM MARCH 16TH',
+        title: 'NEW ALBUM DEC 1st',
         width: '40vw',
         x: '70%',
         y: '15%',
         id: 1,
-        component: NewAlbumOut,
+        component: NewAlbum,
     },
     {
         title: 'Bones - Full Album :)',

@@ -104,6 +104,8 @@ const GO_FISH_ALBUM_LINK = "https://open.spotify.com/album/0DmkVesRp0WCBFe2Pe3UJ
 const GO_FISH_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/go-fish";
 const SPOTIFY_IMAGE_LINK = '/images/spotify_icon.png';
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
+const WORD_SCIENCE_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/word-science";
+const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
 
 const Music = () => {
 
@@ -112,13 +114,36 @@ const Music = () => {
     return (
         <Main>
             <SideNav/>
-            <Screen title={'Go Fish'} width={'90vw'} x={x} y={'0'}>
+
+            <Screen title={'Word Science'} width={'90vw'} x={x} y={'0'}>
                 <AboutContainer>
-
-
-                My newest album that comes out March 16th, 2023!
+                My newest album that comes out December 1st, 2023!
                 
-                A bit heavier than my previous, I felt like making rock songs :)
+                An album full of fun little pop songs, I think you will love it!
+                <Image src="/images/word_science.png"></Image>
+
+                <LinkBox id='movebutton' href={WORD_SCIENCE_PRE_SAVE_LINK} onClick={routeTo(WORD_SCIENCE_PRE_SAVE_LINK)}>
+                    <BorderBox>
+                        <Icon src={SPOTIFY_IMAGE_LINK}/>
+                        {"Spotify Presave"}
+                    </BorderBox>
+                </LinkBox>
+
+                <LinkBox id='movebutton' href={WORD_SCIENCE_BANDCAMP_LINK} onClick={routeTo(WORD_SCIENCE_BANDCAMP_LINK)}>
+                    <BorderBox>
+                        <Icon src={BANDCAMP_IMG_LINK}/>
+                        {"Bandcamp (CDs)"}
+                    </BorderBox>
+                </LinkBox>
+
+                </AboutContainer>
+            </Screen>
+
+            <Screen title={'Go Fish'} width={'90vw'} x={x} y={'105%'}>
+                <AboutContainer>
+                My "rock" album that came out March 16th, 2023!
+                
+                A bit heavier than my previous, I felt like making rock songs :
                 <Image src="/images/go_fish.png"></Image>
 
                 <LinkBox id='movebutton' href={GO_FISH_ALBUM_LINK} onClick={routeTo(GO_FISH_ALBUM_LINK)}>
@@ -138,7 +163,7 @@ const Music = () => {
                 </AboutContainer>
             </Screen>
 
-            <Screen title={'Bones'} width={'90vw'} x={x} y={'105%'}>
+            <Screen title={'Bones'} width={'90vw'} x={x} y={'215%'}>
                 <AboutContainer>
                 My first album, came out October 2022. I'm proud of this album but I think its kind of bad lol.
 
