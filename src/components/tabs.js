@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import ScreenContainer from "./screenContainer";
 import Mp3 from "./tabs/Mp3";
-import { detectMob } from "../utils";
+import { detectMob, routeTo } from "../utils";
 import OldButton from "./reusable/OldButton";
 
 const Iframe = styled.iframe`
@@ -69,6 +69,79 @@ const ButtonContainer = styled.div`
     gap: 8px;
     text-align: center;
 `;
+
+const LinkBox = styled.button`
+    padding: unset;
+    border-radius: unset;
+    border: unset;
+    border-bottom: 4px #686767 solid;
+    border-right: 4px #686767 solid;
+    border-left: 4px white solid;
+    border-top: 4px white solid;
+
+    outline-offset: 0px;
+    outline: 1px solid black;
+
+    :active { 
+        border-top: 4px #686767 solid;
+        border-left: 4px #686767 solid;
+        border-right: 4px white solid;
+        border-bottom: 4px white solid;
+    }
+
+
+    position: relative;
+    // left: -${props => props?.x}px;
+    // right: ${props => props?.x}px;
+    filter: drop-shadow(2px 2px 2px aquamarine);
+`;
+
+const BorderBox = styled.div`
+    border-left: 4px solid #e6e6e6;
+    border-top: 4px solid #e6e6e6;
+    border-right: 4px solid grey;
+    border-bottom: 4px solid grey;
+    background-color: #cfcfcf;
+
+    :active {
+        border-right: 4px solid #e6e6e6;
+        border-bottom: 4px solid #e6e6e6;
+        border-left: 4px solid grey;
+        border-top: 4px solid grey;
+        background-color: aquamarine;
+    }
+
+    :hover {
+        outline-offset: -8px;
+        outline: 1px dashed black;
+    }
+
+    height: 26px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    font-family: 'Syne Mono', monospace;
+    text-shadow: 2px 2px grey;
+    font-size: 24px;
+`
+
+const Icon = styled.img`
+    position: absolute;
+    left: 16px;
+    height: 24px;
+    width: 24px;
+    -webkit-filter: drop-shadow(2px 2px #666666);
+    filter: drop-shadow(2px 2px #666666);
+`
+
+const LinkBoxContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+`
 
 const BonesFullAlbum = () => {
     return (
@@ -162,6 +235,14 @@ const TikTok = () => {
     )
 };
 
+const FlameheartJr = () => {
+    return (
+        <>
+            <Iframe width="99%" src="https://www.youtube.com/embed/jySEbFqSzco?si=HAr3yQ0ho1vSoP3G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></Iframe>
+        </>
+    )
+}
+
 const Intro = () => {
     return (
         <IntroTxt>
@@ -176,14 +257,26 @@ const Intro = () => {
 const NewAlbum = () => {
     return (
         <IntroTxt>
-            <h4><strong>New Album "Word Science"</strong></h4>
-            <p>My awesome new album <span className='rainbow-text'>Word Science</span> comes out Dec 1st! </p>
+            <h4><strong>Listen to "Word Science"</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>Word Science</span> is out now! </p>
             <StyledImg src="/images/word_science.png"></StyledImg>
-            <p>I'm super excited to share what I've been working on recently. Please use the link below to presave on Spotify!
+            <p>I'm super excited to share what I've been working on recently.
             </p>
-            <p><a href="https://distrokid.com/hyperfollow/quietknot2/word-science">Presave here</a></p>
-            <p>You can also buy a CD here through bandcamp!</p>
-            <p><a href="https://ianmferguson.bandcamp.com/album/word-science">Awesome CD</a></p>
+            <LinkBoxContainer>
+                <LinkBox id='movebutton' href={WORD_SCIENCE_PRE_SAVE_LINK} onClick={routeTo(WORD_SCIENCE_PRE_SAVE_LINK)}>
+                    <BorderBox>
+                        <Icon src={SPOTIFY_IMAGE_LINK}/>
+                        {"Spotify"}
+                    </BorderBox>
+                </LinkBox>
+
+                <LinkBox id='movebutton' href={WORD_SCIENCE_BANDCAMP_LINK} onClick={routeTo(WORD_SCIENCE_BANDCAMP_LINK)}>
+                    <BorderBox>
+                        <Icon src={BANDCAMP_IMG_LINK}/>
+                        {"Bandcamp (CDs!)"}
+                    </BorderBox>
+                </LinkBox>
+            </LinkBoxContainer>
         </IntroTxt>
     )
 }
@@ -194,6 +287,8 @@ const SPOTIFY_IMAGE_LINK = '/images/spotify_icon.png';
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
 const YOUTUBE_IMG_LINK = '/images/youtube_icon.png';
 const GO_FISH_YT_LINK = 'https://www.youtube.com/watch?v=3bfSoCL0tyA';
+const WORD_SCIENCE_PRE_SAVE_LINK = "https://open.spotify.com/album/6cJtwOvxUnpCJ1v8ZqCsDY";
+const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
 
 const NewAlbumOut = () => {
     return (
@@ -220,6 +315,14 @@ const MOBILE_TABS = [
         y: '40%',
         id: 1,
         component: Intro,
+    },
+    {
+        title: 'Flameheart Jr <3',
+        width: '90vw',
+        x: '2%',
+        y: '700%',
+        id: 1,
+        component: FlameheartJr,
     },
     {
         title: 'NEW ALBUM DEC 1st',
@@ -306,7 +409,15 @@ const DESKTOP_TABS = [
         component: Intro,
     },
     {
-        title: 'NEW ALBUM DEC 1st',
+        title: 'Flameheart Jr <3',
+        width: '30vw',
+        x: '180%',
+        y: '440%',
+        id: 2,
+        component: FlameheartJr,
+    },
+    {
+        title: 'NEW ALBUM OUT NOW',
         width: '40vw',
         x: '70%',
         y: '15%',

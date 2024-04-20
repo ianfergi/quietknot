@@ -104,7 +104,7 @@ const GO_FISH_ALBUM_LINK = "https://open.spotify.com/album/0DmkVesRp0WCBFe2Pe3UJ
 const GO_FISH_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/go-fish";
 const SPOTIFY_IMAGE_LINK = '/images/spotify_icon.png';
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
-const WORD_SCIENCE_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/word-science";
+const WORD_SCIENCE_PRE_SAVE_LINK = "https://open.spotify.com/album/6cJtwOvxUnpCJ1v8ZqCsDY";
 const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
 
 const Music = () => {
@@ -117,7 +117,7 @@ const Music = () => {
 
             <Screen title={'Word Science'} width={'90vw'} x={x} y={'0'}>
                 <AboutContainer>
-                My newest album that comes out December 1st, 2023!
+                My newest album that came out December 1st, 2023!
                 
                 An album full of fun little pop songs, I think you will love it!
                 <Image src="/images/word_science.png"></Image>
@@ -125,7 +125,7 @@ const Music = () => {
                 <LinkBox id='movebutton' href={WORD_SCIENCE_PRE_SAVE_LINK} onClick={routeTo(WORD_SCIENCE_PRE_SAVE_LINK)}>
                     <BorderBox>
                         <Icon src={SPOTIFY_IMAGE_LINK}/>
-                        {"Spotify Presave"}
+                        {"Spotify"}
                     </BorderBox>
                 </LinkBox>
 
