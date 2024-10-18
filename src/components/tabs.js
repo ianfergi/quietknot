@@ -257,20 +257,20 @@ const Intro = () => {
 const NewAlbum = () => {
     return (
         <IntroTxt>
-            <h4><strong>Listen to "Word Science"</strong></h4>
-            <p>My awesome new album <span className='rainbow-text'>Word Science</span> is out now! </p>
-            <StyledImg src="/images/word_science.png"></StyledImg>
-            <p>I'm super excited to share what I've been working on recently.
+            <h4><strong>Pre order "see u soon"</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>see u soon</span> out Oct 30th!</p>
+            <StyledImg src="/images/see-u-soon.jpg"></StyledImg>
+            <p>Love songs for silly (sad) people {`<3`}
             </p>
             <LinkBoxContainer>
-                <LinkBox id='movebutton' href={WORD_SCIENCE_PRE_SAVE_LINK} onClick={routeTo(WORD_SCIENCE_PRE_SAVE_LINK)}>
+                <LinkBox id='movebutton' href={SEE_U_SOON_PRE_SAVE_LINK} onClick={routeTo(SEE_U_SOON_PRE_SAVE_LINK)}>
                     <BorderBox>
                         <Icon src={SPOTIFY_IMAGE_LINK}/>
                         {"Spotify"}
                     </BorderBox>
                 </LinkBox>
 
-                <LinkBox id='movebutton' href={WORD_SCIENCE_BANDCAMP_LINK} onClick={routeTo(WORD_SCIENCE_BANDCAMP_LINK)}>
+                <LinkBox id='movebutton' href={SEE_U_SOON_BANDCAMP_LINK} onClick={routeTo(SEE_U_SOON_BANDCAMP_LINK)}>
                     <BorderBox>
                         <Icon src={BANDCAMP_IMG_LINK}/>
                         {"Bandcamp (CDs!)"}
@@ -289,6 +289,9 @@ const YOUTUBE_IMG_LINK = '/images/youtube_icon.png';
 const GO_FISH_YT_LINK = 'https://www.youtube.com/watch?v=3bfSoCL0tyA';
 const WORD_SCIENCE_PRE_SAVE_LINK = "https://open.spotify.com/album/6cJtwOvxUnpCJ1v8ZqCsDY";
 const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
+const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
+const SEE_U_SOON_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/see-u-soon";
+
 
 const NewAlbumOut = () => {
     return (
@@ -325,7 +328,7 @@ const MOBILE_TABS = [
         component: FlameheartJr,
     },
     {
-        title: 'NEW ALBUM DEC 1st',
+        title: 'NEW ALBUM OCT 30th',
         width: '90vw',
         x: '4%',
         y: '10%',
@@ -417,7 +420,7 @@ const DESKTOP_TABS = [
         component: FlameheartJr,
     },
     {
-        title: 'NEW ALBUM OUT NOW',
+        title: 'NEW ALBUM OUT OCT 30th',
         width: '40vw',
         x: '70%',
         y: '15%',

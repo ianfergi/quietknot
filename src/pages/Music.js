@@ -106,6 +106,8 @@ const SPOTIFY_IMAGE_LINK = '/images/spotify_icon.png';
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
 const WORD_SCIENCE_PRE_SAVE_LINK = "https://open.spotify.com/album/6cJtwOvxUnpCJ1v8ZqCsDY";
 const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
+const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
+const SEE_U_SOON_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/see-u-soon";
 
 const Music = () => {
 
@@ -115,10 +117,34 @@ const Music = () => {
         <Main>
             <SideNav/>
 
-            <Screen title={'Word Science'} width={'90vw'} x={x} y={'0'}>
+            <Screen title={'see u soon'} width={'90vw'} x={x} y={'0'}>
                 <AboutContainer>
-                My newest album that came out December 1st, 2023!
-                
+                Newest album of love songs "see u soon", comes out October 30th 2024!
+
+                These songs are a bit emotional and vulnerable, I hope you like them {`<3`}
+                <Image src="/images/see-u-soon.jpg"></Image>
+
+                <LinkBox id='movebutton' href={SEE_U_SOON_PRE_SAVE_LINK} onClick={routeTo(SEE_U_SOON_PRE_SAVE_LINK)}>
+                    <BorderBox>
+                        <Icon src={SPOTIFY_IMAGE_LINK}/>
+                        {"Spotify Presave"}
+                    </BorderBox>
+                </LinkBox>
+
+                <LinkBox id='movebutton' href={SEE_U_SOON_BANDCAMP_LINK} onClick={routeTo(SEE_U_SOON_BANDCAMP_LINK)}>
+                    <BorderBox>
+                        <Icon src={BANDCAMP_IMG_LINK}/>
+                        {"Bandcamp (CDs)"}
+                    </BorderBox>
+                </LinkBox>
+
+                </AboutContainer>
+            </Screen>
+
+            <Screen title={'Word Science'} width={'90vw'} x={x} y={'105%'}>
+                <AboutContainer>
+                3rd album, about love and loss. Released Nov 1st, 2023.
+
                 An album full of fun little pop songs, I think you will love it!
                 <Image src="/images/word_science.png"></Image>
 
@@ -139,7 +165,7 @@ const Music = () => {
                 </AboutContainer>
             </Screen>
 
-            <Screen title={'Go Fish'} width={'90vw'} x={x} y={'105%'}>
+            <Screen title={'Go Fish'} width={'90vw'} x={x} y={'215%'}>
                 <AboutContainer>
                 My "rock" album that came out March 16th, 2023!
                 
@@ -163,7 +189,7 @@ const Music = () => {
                 </AboutContainer>
             </Screen>
 
-            <Screen title={'Bones'} width={'90vw'} x={x} y={'215%'}>
+            <Screen title={'Bones'} width={'90vw'} x={x} y={'330%'}>
                 <AboutContainer>
                 My first album, came out October 2022. I'm proud of this album but I think its kind of bad lol.
 

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SideNav from "../components/sideNav";
 import ScreenContainer from "../components/screenContainer";
-import { routeTo } from "../utils";
+import { detectMob, routeTo } from "../utils";
 
 const AboutContainer = styled.div`
     padding: 8px;
@@ -104,19 +104,22 @@ const Icon = styled.img`
     filter: drop-shadow(2px 2px #666666);
 `
 
-const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
+const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
 
 const Merch = () => {
+    const isMobile = detectMob();
+    const width = isMobile ? '90vw' : '40vw';
+
     return (
         <>
             <SideNav />
-            <Screen title={"Merch"} width={'90vw'} x={'5%'} y={'0'}>
+            <Screen title={"Merch"} width={width} x={'5%'} y={'0'}>
                 <Container>
                 <AboutContainer>
-                Word Science CDs <span className="rainbow-text">AVAILABLE NOW</span>
+                see u soon CDs <span className="rainbow-text">AVAILABLE NOW</span>
                 </AboutContainer>
-                <LinkBox id='movebutton' href={WORD_SCIENCE_BANDCAMP_LINK} onClick={routeTo(WORD_SCIENCE_BANDCAMP_LINK)}>
+                <LinkBox id='movebutton' href={SEE_U_SOON_BANDCAMP_LINK} onClick={routeTo(SEE_U_SOON_BANDCAMP_LINK)}>
                     <BorderBox>
                         <Icon src={BANDCAMP_IMG_LINK}/>
                         {"BUY CD HERE"}
