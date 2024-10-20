@@ -78,11 +78,23 @@
     i bite
   size: 1
 - title: "unnamed"
+  date: "10/5/24"
+  content: |
+    this is how the air felt when i fell in love with u
+  size: 1
+- title: "unnamed"
   date: "10/3/24"
   content: |
     i wrote a poem today 
     do u think she'll like it
     do u think she'll kiss me on the mouth
+  size: 1
+- title: "unnamed"
+  date: "10/2/24"
+  content: |
+    i miss you
+    i hate you
+    i love you
   size: 1
 - title: "unnamed"
   date: "10/1/24"
@@ -101,6 +113,11 @@
     when the lights are dim
     i may be a handsome man
     but ill never be a pretty girl
+  size: 1
+- title: "unnamed"
+  date: "9/27/24"
+  content: |
+    i wanna eat your bones
   size: 1
 - title: "unnamed"
   date: "9/24/24"
