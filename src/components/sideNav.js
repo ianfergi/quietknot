@@ -56,6 +56,11 @@ const Nav = styled(SwagLink)`
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
     }
+
+    ${props => props?.smalltext && `
+        -webkit-text-stroke: 1px black;
+        color: pink;
+    `}
 `;
 
 const CloseButton = styled.button`
@@ -97,6 +102,7 @@ const SideNav = () => {
                     <Nav to='/merch'>merch</Nav>
                     <Nav to='/about'>about</Nav>
                     <Nav to='/unreleased'>unreleased</Nav>
+                    <Nav smalltext={true} to='/xxxxx'>୨☆˚‧₊˚꒰ა♡⋆</Nav>
                 </NavContainer>
             )}
         </>

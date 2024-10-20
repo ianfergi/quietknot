@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Draggable from 'react-draggable'
 
+const VARIANT = {
+  V1: 'V1',
+  V2: 'V2',
+};
+
 const BaseContainer = styled.div`
   border: 2px solid black;
   width: ${props => props.width};
@@ -11,6 +16,18 @@ const BaseContainer = styled.div`
   left: ${props => props.x};
   background-color: #f1f1f1;;
   z-index: ${props => props?.isTop ? `999` : `0`};
+
+  ${props => props?.variant === VARIANT.V2 && `
+    border-bottom: 4px #686767 solid;
+    border-right: 4px #686767 solid;
+    border-left: 4px white solid;
+    border-top: 4px white solid;
+    outline-offset: 0px;
+    outline: 1px solid black;
+    background-color: black;
+    color: white;
+    position: unset;
+  `}
 `;
 
 const TopTab = styled.div`
@@ -19,6 +36,13 @@ const TopTab = styled.div`
   justify-content: space-between;
   border-bottom: 2px solid black;
   background-color: aquamarine;
+
+  ${props => props?.variant === VARIANT.V2 && `
+    outline-offset: 0px;
+    outline: 1px solid black;
+    border-bottom: unset;
+    background-color: blue;
+  `}
 `;
 
 const CloseButton = styled.button`
@@ -39,9 +63,20 @@ const TabText = styled.p`
   margin-bottom: auto;
   padding-left: 8px;
   font-family: 'Syne Mono', monospace;
+
+  ${props => props?.variant === VARIANT.V2 && `
+    padding-left: 4px;
+  `}
 `;
 
-const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id, className }) => {
+const Content = styled.div`
+  ${props => props?.variant === VARIANT.V2 && `
+    padding: 8px 16px 8px 16px;
+    white-space: pre-line;
+  `}
+`;
+
+const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id, className, isDraggable, variant}) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const toggleOpen = () => setIsOpen(!isOpen);
@@ -49,19 +84,34 @@ const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id,
     if (!isOpen) {
       return (<></>);
     } else {
-      return (
+      if (isDraggable) {
+        return (
           <Draggable positionOffset={{x, y}} style={{position: "absolute", 'padding-bottom': "8px"}} cancel={'.button'} onStart={setTop(id)}>
-            <BaseContainer className={className} width={width} height={height} isTop={(top === id)} onClick={setTop(id)}>
-              <TopTab>
-                <TabText>{title}</TabText>
-                <CloseButton className="button" onClick={toggleOpen}>&times;</CloseButton>
+            <BaseContainer variant={variant} className={className} width={width} height={height} isTop={(top === id)} onClick={setTop(id)}>
+              <TopTab variant={variant}>
+                <TabText variant={variant}>{title}</TabText>
+                <CloseButton variant={variant} className="button" onClick={toggleOpen}>&times;</CloseButton>
               </TopTab>
-              <div className="button">
+              <Content variant={variant} className="button">
                 {children}
-              </div>
+              </Content>
             </BaseContainer>
           </Draggable>
-      )
+        )
+      } else {
+        return (
+          <BaseContainer variant={variant} className={className} width={width} height={height} isTop={(top === id)} onClick={setTop(id)}>
+            <TopTab variant={variant}>
+              <TabText variant={variant}>{title}</TabText>
+              <CloseButton variant={variant} className="button" onClick={toggleOpen}>&times;</CloseButton>
+            </TopTab>
+            <Content variant={variant} className="button">
+              {children}
+            </Content>
+          </BaseContainer>
+        )
+      }
+
     }
 }
 
@@ -74,6 +124,10 @@ ScreenContainer.defaultProps = {
   setTop: () => {},
   id: 0,
   className: "",
+  isDraggable: true,
+  variant: VARIANT.V1,
 }
 
 export default ScreenContainer;
+
+export { VARIANT };
