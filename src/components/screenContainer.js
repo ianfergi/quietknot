@@ -76,10 +76,13 @@ const Content = styled.div`
   `}
 `;
 
-const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id, className, isDraggable, variant}) => {
+const ScreenContainer = ({width, height, x, y, children, title, top, setTop, id, className, isDraggable, variant, onClose}) => {
     const [isOpen, setIsOpen] = useState(true);
 
-    const toggleOpen = () => setIsOpen(!isOpen);
+    const toggleOpen = () => {
+      onClose();
+      setIsOpen(!isOpen);
+    } 
 
     if (!isOpen) {
       return (<></>);
@@ -126,6 +129,7 @@ ScreenContainer.defaultProps = {
   className: "",
   isDraggable: true,
   variant: VARIANT.V1,
+  onClose: () => {},
 }
 
 export default ScreenContainer;

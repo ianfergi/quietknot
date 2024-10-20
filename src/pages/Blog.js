@@ -32,16 +32,29 @@ const Blog = () => {
 
     const [blogs, setBlogs] = useState([]);
 
+    const onClose = (key) => {
+      // Filter out the blog with the given key
+      const updatedBlogs = blogs.filter(blog => blog.key !== key);
+      setBlogs(updatedBlogs); // Update the state
+    };
+
     useEffect(() => {
       // Fetch the YAML file
       fetch('/blog.yaml')
         .then((response) => response.text())
         .then((text) => {
-          const data = yaml.load(text); // Parse YAML to JavaScript object
-          setBlogs(data); // Set the blogs state with parsed data
+          const parsedData = yaml.load(text);
+          
+          // Add a key to each blog item using map
+          const blogsWithKeys = parsedData.map((blog, index) => ({
+            ...blog,
+            key: index // Or any other way to generate unique keys
+          }));
+          
+          setBlogs(blogsWithKeys); // Set blogs with keys in state
         })
         .catch((error) => console.error('Error loading the blogs:', error));
-    }, []); 
+    }, []);
 
     useEffect(() => {
       const grid = document.querySelector('.grid-container');
@@ -61,7 +74,7 @@ const Blog = () => {
             <Screen>
               <Container className={'grid-container'} isMobile={isMobile} >
                 {blogs.map((blog, index) => (
-                  <Card1 key={index} className={'card'} variant={VARIANT.V2} title={blog?.title} size={blog?.size} isDraggable={false}>
+                  <Card1 key={index} onClose={() => onClose(blog?.key)} className={'card'} variant={VARIANT.V2} title={blog?.title} size={blog?.size} isDraggable={false}>
                     {blog?.date}
                     <br />
                     <br />

@@ -498,7 +498,6 @@ const Tabs = () => {
     const [top, setTop] = useState(1);
 
     const dragHandler = (id) => () => {
-        console.log(id);
         setTop(id);
     }
 
