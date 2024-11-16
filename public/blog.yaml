@@ -1,3 +1,126 @@
+# title: goes at the top
+# date: presented right below
+# content: content, respecting new lines
+# size 1 - 3, representing width, not used atm
+#
+# Add new entries newest first please! ty <3 - ian
+- title: "encyclopedia"
+  date: "11/15/24"
+  content: |
+    play a little dress up
+    put on an ego for you to see
+    i'll dream about what could have been
+    repeat what should have been said then
+- title: "halloween"
+  date: "10/31/24"
+  content: |
+    i can't seem to forgive myself
+    i'm a terrible person
+    nothing is enough for me
+    it's halloween
+    no different
+    but i guess it's okay to be scared today
+  size: 1
+- title: "untitled"
+  date: "10/29/24"
+  content: |
+    i recognize myself in the darkness
+    the only embrace that's natural to me
+    a hug i can't roll my eyes at
+    the lover i look in the face
+    the only that will never leave
+    my baby gives me chills
+    she fucks me every night
+    and when i plug my ears
+    i let her surround me
+    a floating set of eyes
+    that can only look down at the street
+    she puts me in the fish bowl
+    stir me up and watch the bubbles
+    she's here while you're gone
+    she's been here all along
+  size: 1
+- title: "revolver"
+  date: "10/28/24"
+  content: |
+    i'm a loaded revolver
+    and it's just me here
+    no one to pull my trigger
+    put me in your mouth
+    pour the pain out
+  size: 1
+- title: "spit"
+  date: "10/27/24"
+  content: |
+    equipped with this golden ego
+    i spit in your face
+    avert my eyes when i see your pain
+  size: 1
+- title: "emoji"
+  date: "10/27/24"
+  content: |
+    when everything is so haunted
+    purple hair and pierced ears
+    hurt close but not near
+    messages with no emoji
+    a touch with no energy
+
+    i feel it but it's not real
+    i don't think i'm here
+    empty but i'm whole
+    you're a part of the show
+    can i prove it didn't matter
+    is it like it never happened
+  size: 1
+- title: "encyclopedia"
+  date: "10/22/24"
+  content: |
+    you want my blood
+    i sink my nails in
+    ill make it hurt first
+    you're fucking nothing
+  size: 1
+- title: "unnamed"
+  date: "10/21/24"
+  content: |
+    the air feels course on my skin
+    monkey still on my fucking back
+    find a needle to tuck me in
+    not far but a long way back
+
+    need something to make it slow
+    time you met who you are
+    she'll feel the scars you never show
+    kept hiden closer than far
+
+    it's all blue blue blue
+    cold like a brick in the shade
+    let everyone step on you
+    warmth that will never stay
+
+    the silence only lasts a day
+    squeeze your hand 'til it turns white
+    kill the metaphor you let carry you away
+    like bloody knuckles without a fight
+
+    when the sky is blood orange
+    you'll find it just like it was
+    like you were never even around
+    you made such a pointless fuss
+
+    all the ringing in your ears
+    cuts the silence you don't feel
+    so what i want you here
+    chump tricked out of a deal
+  size: 1
+- title: "encyclopedia"
+  date: "10/20/24"
+  content: |
+    all i know is how i feel
+    my head is an encyclopedia
+    filled with repeated phrases and redacted lines
+    your name starts with a big curly letter
+  size: 1
 - title: "unnamed"
   date: "10/19/24"
   content: |

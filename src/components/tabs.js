@@ -60,6 +60,7 @@ const IntroTxt = styled.p`
 
 const StyledImg = styled.img`
     max-width: 200px;
+    cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
@@ -78,6 +79,7 @@ const LinkBox = styled.button`
     border-right: 4px #686767 solid;
     border-left: 4px white solid;
     border-top: 4px white solid;
+    cursor: pointer;
 
     outline-offset: 0px;
     outline: 1px solid black;
@@ -257,13 +259,13 @@ const Intro = () => {
 const NewAlbum = () => {
     return (
         <IntroTxt>
-            <h4><strong>Pre order "see u soon"</strong></h4>
-            <p>My awesome new album <span className='rainbow-text'>see u soon</span> out Oct 30th!</p>
-            <StyledImg src="/images/see-u-soon.jpg"></StyledImg>
-            <p>Love songs for silly (sad) people {`<3`}
+            <h4><strong>see u soon OUT NOW!!</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>see u soon</span> is now out!!!</p>
+            <StyledImg src="/images/see-u-soon.jpg" onClick={routeTo(SEE_U_SOON_SPOTIFY_LINK)}></StyledImg>
+            <p>Love songs for silly (sad) people {`<3`}. Please give it a spin and let me know what you think!
             </p>
             <LinkBoxContainer>
-                <LinkBox id='movebutton' href={SEE_U_SOON_PRE_SAVE_LINK} onClick={routeTo(SEE_U_SOON_PRE_SAVE_LINK)}>
+                <LinkBox id='movebutton' href={SEE_U_SOON_SPOTIFY_LINK} onClick={routeTo(SEE_U_SOON_SPOTIFY_LINK)}>
                     <BorderBox>
                         <Icon src={SPOTIFY_IMAGE_LINK}/>
                         {"Spotify"}
@@ -291,6 +293,7 @@ const WORD_SCIENCE_PRE_SAVE_LINK = "https://open.spotify.com/album/6cJtwOvxUnpCJ
 const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word-science";
 const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
 const SEE_U_SOON_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/see-u-soon";
+const SEE_U_SOON_SPOTIFY_LINK = "https://open.spotify.com/album/7Ift1kYO8sagPQqJ6PpbmW";
 
 
 const NewAlbumOut = () => {

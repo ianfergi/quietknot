@@ -6,7 +6,7 @@ import { detectMob, routeTo } from "../utils";
 const LINKS = [
     {
         title: 'Spotify',
-        href: 'https://open.spotify.com/artist/53nv6nCxeXGPc6fAUyzmkp',
+        href: 'https://open.spotify.com/album/7Ift1kYO8sagPQqJ6PpbmW',
         img: '/images/spotify_icon.png',
     },
     {
@@ -45,6 +45,7 @@ const Container = styled.div`
 `
 
 const LinkBox = styled.button`
+    cursor: pointer;
     padding: unset;
     border-radius: unset;
     border: unset;
