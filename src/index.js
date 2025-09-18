@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Merch from "./pages/Merch";
-import Blog from "./pages/Blog";
 import Unreleased from "./pages/Unreleased";
 
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
@@ -25,7 +24,6 @@ const App = () => {
         <Route path='/music' element={<Music/>} />
         <Route path='/merch' element={<Merch/>} />
         <Route path='/unreleased' element={<Unreleased/>} />
-        <Route path='/xxxxx' element={<Blog/>} />
         <Route exact path='/' element={<Home/>} />
       </Routes>
     </Router>
