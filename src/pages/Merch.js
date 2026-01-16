@@ -105,6 +105,7 @@ const Icon = styled.img`
 `
 
 const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
+const TOUGH_LUCK_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/tough-luck";
 const BANDCAMP_IMG_LINK = '/images/bandcamp_icon.png';
 
 const Merch = () => {
@@ -117,9 +118,9 @@ const Merch = () => {
             <Screen title={"Merch"} width={width} x={'5%'} y={'0'}>
                 <Container>
                 <AboutContainer>
-                see u soon CDs <span className="rainbow-text">AVAILABLE NOW</span>
+                tough luck CDs <span className="rainbow-text">AVAILABLE NOW</span>
                 </AboutContainer>
-                <LinkBox id='movebutton' href={SEE_U_SOON_BANDCAMP_LINK} onClick={routeTo(SEE_U_SOON_BANDCAMP_LINK)}>
+                <LinkBox id='movebutton' href={TOUGH_LUCK_BANDCAMP_LINK} onClick={routeTo(TOUGH_LUCK_BANDCAMP_LINK)}>
                     <BorderBox>
                         <Icon src={BANDCAMP_IMG_LINK}/>
                         {"BUY CD HERE"}

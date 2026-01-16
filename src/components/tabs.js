@@ -259,20 +259,20 @@ const Intro = () => {
 const NewAlbum = () => {
     return (
         <IntroTxt>
-            <h4><strong>see u soon OUT NOW!!</strong></h4>
-            <p>My awesome new album <span className='rainbow-text'>see u soon</span> is now out!!!</p>
-            <StyledImg src="/images/see-u-soon.jpg" onClick={routeTo(SEE_U_SOON_SPOTIFY_LINK)}></StyledImg>
-            <p>Love songs for silly (sad) people {`<3`}. Please give it a spin and let me know what you think!
+            <h4><strong>tough luck OUT NOW!!</strong></h4>
+            <p>My awesome new album <span className='rainbow-text'>tough luck</span> is now out!!!</p>
+            <StyledImg src="/images/tough_luck.png" onClick={routeTo(TOUGH_LUCK_SPOTIFY_LINK)}></StyledImg>
+            <p>Rock songs and other fun stuff. Please give it a spin and let me know what you think!
             </p>
             <LinkBoxContainer>
-                <LinkBox id='movebutton' href={SEE_U_SOON_SPOTIFY_LINK} onClick={routeTo(SEE_U_SOON_SPOTIFY_LINK)}>
+                <LinkBox id='movebutton' href={TOUGH_LUCK_SPOTIFY_LINK} onClick={routeTo(TOUGH_LUCK_SPOTIFY_LINK)}>
                     <BorderBox>
                         <Icon src={SPOTIFY_IMAGE_LINK}/>
                         {"Spotify"}
                     </BorderBox>
                 </LinkBox>
 
-                <LinkBox id='movebutton' href={SEE_U_SOON_BANDCAMP_LINK} onClick={routeTo(SEE_U_SOON_BANDCAMP_LINK)}>
+                <LinkBox id='movebutton' href={TOUGH_LUCK_BANDCAMP_LINK} onClick={routeTo(TOUGH_LUCK_BANDCAMP_LINK)}>
                     <BorderBox>
                         <Icon src={BANDCAMP_IMG_LINK}/>
                         {"Bandcamp (CDs!)"}
@@ -294,6 +294,8 @@ const WORD_SCIENCE_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/word
 const SEE_U_SOON_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/see-u-soon";
 const SEE_U_SOON_PRE_SAVE_LINK = "https://distrokid.com/hyperfollow/quietknot2/see-u-soon";
 const SEE_U_SOON_SPOTIFY_LINK = "https://open.spotify.com/album/7Ift1kYO8sagPQqJ6PpbmW";
+const TOUGH_LUCK_SPOTIFY_LINK = "https://open.spotify.com/album/5yWMROQrY4zO8cE8HdSzLh";
+const TOUGH_LUCK_BANDCAMP_LINK = "https://ianmferguson.bandcamp.com/album/tough-luck";
 
 
 const NewAlbumOut = () => {
@@ -331,7 +333,7 @@ const MOBILE_TABS = [
         component: FlameheartJr,
     },
     {
-        title: 'NEW ALBUM OCT 30th',
+        title: 'NEW ALBUM OUT JAN 16TH',
         width: '90vw',
         x: '4%',
         y: '10%',
@@ -423,7 +425,7 @@ const DESKTOP_TABS = [
         component: FlameheartJr,
     },
     {
-        title: 'NEW ALBUM OUT OCT 30th',
+        title: 'NEW ALBUM OUT JAN 16TH',
         width: '40vw',
         x: '70%',
         y: '15%',
